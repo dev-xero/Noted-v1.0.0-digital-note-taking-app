@@ -56,6 +56,7 @@ img {
 	outline: none;
 	border: none;
 	cursor: pointer;
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
 :where(p, span, aside, article) {
@@ -64,6 +65,7 @@ img {
 
 :where(ul > li) {
 	list-style: none;
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
 .container {
@@ -124,6 +126,98 @@ header nav ul :where(li.signup-btn:hover, li.signup-btn:active) {
 	border-color: var(--clr-white) !important
 }
 
+main {
+	margin-top: 8.2rem;
+}
+
+main .container {
+	display: flex;
+	flex-direction: column;
+	align-items: center !important;
+}
+
+main .container .product-description {
+	order: 2;
+	z-index: 8;
+	flex-grow: 1;
+}
+
+main .container .product-description h1 {
+	font-family: var(--ff-heading);
+	font-size: 4.4rem;
+	margin-bottom: 1.2rem;
+	word-wrap: break-word;
+	cursor: default;
+	user-select: none;
+}
+
+main .container .product-description p {
+	font-family: var(--ff-body);
+	color: var(--clr-deep-grey);
+	font-size: 2.4rem;
+}
+
+main .container .product-description button {
+	color: var(--clr-black);
+	background-color: var(--clr-white);
+	font-family: var(--ff-heading);
+	font-size: 2rem;
+	padding: 12px 24px;
+	margin: 2rem 0px;
+	font-weight: 600;
+	will-change: transform;
+	transform: scale(1);
+	transition: transform 250ms;
+}
+
+main .container .product-description button span.light-text {
+	font-weight: 400;
+}
+
+main .container .product-description button:active {
+	transform: scale(0.98)
+}
+
+main .container .product-display {
+	width: 100%;
+	flex-grow: 1;
+	display: flex;
+	justify-content: center;
+	position: relative;
+	order: 1;
+}
+
+main .container .product-display img.product {
+	max-width: 100%;
+	display: inline-block;
+	margin-bottom: 16px;
+	z-index: 2;
+} 
+
+main .container .product-display img.pattern {
+	position: absolute;
+	max-width: calc(0.2 * 100%);
+	top: -30px;
+	right: -15px;
+}
+
+main .container .product-display img.pattern-bottom {
+	position: absolute;
+	max-width: calc(0.2 * 100%);
+	bottom: -20px;
+	left: -10px;
+}
+
+main .container .product-display .blur {
+	position: absolute;
+	bottom: 0px !important;
+	left: 0px;
+	width: 100%;
+	height: 30%;
+	background-image: linear-gradient(to bottom, hsla(240, 7%, 3%, 0) 0%, var(--clr-black) 80%);
+	z-index: 4;
+}
+
 /* MEDIA QUERIES */
 @media screen and (min-width: 680px) {
 	.container {
@@ -144,6 +238,27 @@ header nav ul :where(li.signup-btn:hover, li.signup-btn:active) {
 	header nav ul li span.grey-text {
 		font-size: inherit !important;
 	}
+
+	main .container {
+		flex-direction: row;
+		align-items: flex-start !important;
+	}
+
+	main .container .product-description {
+		order: 1;
+		min-width: calc(50% - 20px);
+		margin-right: 20px;
+	}
+
+	main .container .product-description p {
+		font-size: 2.0rem;
+	}
+
+	main .container .product-display {
+		order: 2;
+		min-width: calc(50% - 20px);
+	}
+
 }
 
 @media screen and (min-width: 440px) {
@@ -185,5 +300,11 @@ header nav ul :where(li.signup-btn:hover, li.signup-btn:active) {
 
 	header nav ul li:last-of-type {
 		margin-right: 0px;
+	}
+}
+
+@media screen and (max-width: 440px) {
+	main .container .product-description button {
+		width: 100% !important;
 	}
 }
