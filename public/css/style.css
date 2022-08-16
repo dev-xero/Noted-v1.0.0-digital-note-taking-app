@@ -16,6 +16,7 @@
 	--clr-white: hsla(0, 0%, 100%, 1);
 	--clr-grey: hsla(0, 0%, 86%, 1);
 	--clr-deep-grey: hsla(206, 4%, 61%, 1);
+	--clr-deep-grey-hover: rgba(152, 156, 160, 0.233);
 }
 
 /* RESET */
@@ -41,6 +42,10 @@ img {
 	user-select: none;
 }
 
+:where(html, body) {
+	height: 100%;
+}
+
 :where(a, a:hover, a:active, a:visited) {
 	color: inherit;
 	font-style: inherit;
@@ -55,4 +60,130 @@ img {
 
 :where(p, span, aside, article) {
 	font-size: 1.8rem;
+}
+
+:where(ul > li) {
+	list-style: none;
+}
+
+.container {
+	max-width: 300px;
+	margin: 0px auto;
+}
+
+/* WEBSITE STYLING */
+header {
+	margin-top: 2rem;
+}
+
+header .container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+header .container svg {
+	max-width: 20rem;
+}
+
+header nav {
+	margin-top: 32px;
+	padding: 12px 0px 18px 0px;
+}
+
+header nav ul li {
+	font-family: var(--ff-heading);
+	font-size: 1.8rem;
+	padding: 12px 22px;
+	margin-bottom: 8px;
+	color: var(--clr-grey);
+	will-change: background-color;
+	transition: background-color 250ms, border-color 250ms;
+	font-weight: 500;
+	cursor: pointer;
+	user-select: none;
+	border: 2px solid transparent;
+}
+
+header nav ul li.signup-btn {
+	border: 2px solid var(--clr-deep-grey);
+	margin-bottom: 0px;
+}
+
+header nav ul li span.grey-text {
+	color: var(--clr-grey) !important;
+	font-weight: 300 !important;
+}
+
+header nav ul :where(li:hover, li:active) {
+	color: var(--clr-white) !important;
+	background-color: var(--clr-deep-grey-hover);
+}
+
+header nav ul :where(li.signup-btn:hover, li.signup-btn:active) {
+	border-color: var(--clr-white) !important
+}
+
+/* MEDIA QUERIES */
+@media screen and (min-width: 680px) {
+	.container {
+		width: 90%;
+		max-width: 1120px !important;
+	}
+
+	header .container svg {
+		max-width: 14rem !important;
+		max-height: 6rem !important;
+	}
+
+	header nav ul li {
+		font-size: 1.6rem !important;
+		padding: 16px 24px;
+	}
+
+	header nav ul li span.grey-text {
+		font-size: inherit !important;
+	}
+}
+
+@media screen and (min-width: 440px) {
+	.container {
+		max-width: 90%;
+	}
+
+	header .container svg {
+		max-width: 10rem;
+		max-height: 4rem;
+	}
+
+	header .container {
+		flex-direction: row;
+		justify-content: space-between;
+		align-items: center;
+	}
+
+	header nav {
+		border: none;
+		margin-top: 0px;
+		padding: 0px;
+	}
+
+	header nav ul {
+		display: flex;
+		align-items: center;
+	}
+
+	header nav ul li {
+		margin-bottom: 0px !important;
+		margin-right: 16px;
+		font-size: 1.2rem;
+	}
+
+	header nav ul li span.grey-text {
+		font-size: 1.2rem;
+	}
+
+	header nav ul li:last-of-type {
+		margin-right: 0px;
+	}
 }
