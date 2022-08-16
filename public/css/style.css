@@ -1,0 +1,58 @@
+@font-face {
+	font-family: "inter";
+	src: url('/public/assets/fonts/inter.ttf');
+}
+
+@font-face {
+	font-family: "outfit";
+	src: url('/public/assets/fonts/outfit.ttf');
+}
+
+/* ROOT MODIFICATIONS */
+:root {
+	--ff-heading: "inter", "segoe ui", Helvetica, Arial;
+	--ff-body: "outfit", "verdana", Arial;
+	--clr-black: hsla(240, 7%, 3%, 1);
+	--clr-white: hsla(0, 0%, 100%, 1);
+	--clr-grey: hsla(0, 0%, 86%, 1);
+	--clr-deep-grey: hsla(206, 4%, 61%, 1);
+}
+
+/* RESET */
+* {
+	margin: 0px;
+	padding: 0px;
+	box-sizing: border-box;
+}
+
+/* SETUP */
+html {
+	font-size: 62.5%;
+}
+
+body {
+	color: var(--clr-white);
+	background-color: var(--clr-black)
+}
+
+img {
+	display: block;
+	outline: none;
+	user-select: none;
+}
+
+:where(a, a:hover, a:active, a:visited) {
+	color: inherit;
+	font-style: inherit;
+}
+
+:where(button, button:active) {
+	color: inherit;
+	outline: none;
+	border: none;
+	cursor: pointer;
+}
+
+:where(p, span, aside, article) {
+	font-size: 1.8rem;
+}
