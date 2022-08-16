@@ -1,11 +1,11 @@
 @font-face {
 	font-family: "inter";
-	src: url('/public/assets/fonts/inter.ttf');
+	src: url('./public/assets/fonts/inter.ttf');
 }
 
 @font-face {
 	font-family: "outfit";
-	src: url('/public/assets/fonts/outfit.ttf');
+	src: url('./public/assets/fonts/outfit.ttf');
 }
 
 /* ROOT MODIFICATIONS */

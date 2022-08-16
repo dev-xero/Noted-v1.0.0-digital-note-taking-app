@@ -1,4 +1,4 @@
-const AVATAR_URL = "/public/assets/images/avatars/avatar-001.png"
+const AVATAR_URL = "./public/assets/images/avatars/avatar-001.png"
 
 const avatarImg = document.querySelector('.review-avatar')
 
